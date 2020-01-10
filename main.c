@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <avr/io.h>
 #include <util/delay.h>
-#include "uart.h"
+
 #include "lcdlib.h"
 
 int main(void) {
@@ -23,9 +23,7 @@ int main(void) {
 		ADCSRA = 0b10000111;
 
 
-		uart_init();
-		stdout = &uart_output;
-		stdin  = &uart_input;
+	
 	
 		char input;
 		Send_Command(0x01); // clear screen
